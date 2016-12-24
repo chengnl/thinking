@@ -64,23 +64,27 @@
 2.变长类型参数  
 
   变成类型主要有：string、map、set、list、struct  
+  
   **string类型**  
   string类型![string类型][4]
 [4]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/stringfield.png "string类型"  
   4字节参数内容长度、参数内容字节 两部分组成
+
   **map类型**  
   map类型![map类型][5]
 [5]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/mapfield.png "map类型"  
   1字节key类型：key类型  
   1字节value类型：value类型  
   4字节map的size：map大小  
-  map内容：循环写key，value内容，根据key、value的类型做不同的写处理  
+  map内容：循环写key，value内容，根据key、value的类型做不同的写处理 
+
   **set和list类型**    
   set和list类型![set和list类型][6]
 [6]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/slfield.png "set和list类型"  
   1字节value类型：类型字节  
   4字节集合size：集合大小  
   写value内容：循环写value内容，根据value类型做不同的写处理  
+
   **struct类型**   
   类似写方法参数，根据struct里面的字段顺序开始写，处理每个字段的字段内容，字段结束标识
 
