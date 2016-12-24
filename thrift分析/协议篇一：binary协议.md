@@ -20,8 +20,8 @@
 
 2.非strictWrite模式
 
-消息头图![非strictWrite模式消息头][1]
-[1]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/bmhead.png "非strictWrite模式消息头"
+消息头图![非strictWrite模式消息头][2]
+[2]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/bmhead.png "非strictWrite模式消息头"
 
 **4字节方法名长度**：获取方法名字符串长度len(methodName)  
 **方法名字串**：方法名内容字节  
@@ -35,8 +35,8 @@
 
 ####2.1参数字段
 写字段，根据参数顺序编号写  
-字段处理图![字段处理图][1]
-[1]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/field.png "字段处理图"
+字段处理图![字段处理图][3]
+[3]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/field.png "字段处理图"
 
 **1字节参数类型**：参数类型值，分bool=2、byte=3、i8=3、i16=6、i32=8、i64=10、double=4、map=13、list=15、set=14、struct=12等  
 **2字节字段顺序号**：字段在方法参数上的标记序号
@@ -52,19 +52,19 @@
 2.变长类型参数  
   变成类型主要有：string、map、set、list、struct  
   **string类型**  
-  string类型![string类型][1]
-[1]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/stringfield.png "string类型"  
+  string类型![string类型][4]
+[4]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/stringfield.png "string类型"  
   4字节参数内容长度、参数内容字节 两部分组成
   **map类型**  
-  map类型![map类型][1]
-[1]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/mapfield.png "map类型"  
+  map类型![map类型][5]
+[5]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/mapfield.png "map类型"  
   1字节key类型：key类型  
   1字节value类型：value类型  
   4字节map的size：map大小  
   map内容：循环写key，value内容，根据key、value的类型做不同的写处理  
   **set和list类型**    
-  set和list类型![set和list类型][1]
-[1]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/slfield.png "set和list类型"  
+  set和list类型![set和list类型][6]
+[6]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/slfield.png "set和list类型"  
   1字节value类型：类型字节  
   4字节集合size：集合大小  
   写value内容：循环写value内容，根据value类型做不同的写处理  
