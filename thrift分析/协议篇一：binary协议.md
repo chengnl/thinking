@@ -53,7 +53,7 @@
 
 参数多个情况，根据上面消息格式依次处理每个字段参数
 
-#####参数类型
+#####2.1.1参数类型
 
 不同参数类型，在参数内容处理上有所不同，分下面的两种情况：  
 
@@ -64,7 +64,7 @@
 2.变长类型参数  
 
   变成类型主要有：string、map、set、list、struct  
-  
+
   **string类型**  
   string类型![string类型][4]
 [4]:https://github.com/chengnl/thinking/blob/master/images-folder/thrift/stringfield.png "string类型"  
