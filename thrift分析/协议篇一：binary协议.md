@@ -1,5 +1,6 @@
 # binary协议
   分析thrift二进制传输协议格式，普通socket传输
+  完整的示例见gostudy中的thrifttest/binary[https://github.com/chengnl/gostudy/tree/master/thrifttest/binary](https://github.com/chengnl/gostudy/tree/master/thrifttest/binary)
 # 协议分析
 ## 方法调用
 方法调用都分为三部分写数据：消息头，参数内容，消息结尾  
@@ -94,12 +95,15 @@
 
 ### 三、代码示例
 定义简单的方法：
+
 ```
  string HelloWorld()
+
 ```
 协议使用二进制协议，普通socket接收和发送
 
 模拟发送代码如下：
+
 ```
 func sendMethod() {
 	//模拟调用string HelloWorld()
@@ -138,6 +142,7 @@ func writeByte(val byte) {
 	v[0] = val
 	conn.Write(v)
 }
+
 ```
 
 
@@ -189,12 +194,16 @@ func writeByte(val byte) {
 
 ### 三、代码示例
 定义简单的方法：
+
 ```
+
  string HelloWorld()
+
 ```
 协议使用二进制协议，普通socket接收和发送
 
 模拟接收代码如下：
+
 ```
 func receiveResult() {
 	//读回消息头
