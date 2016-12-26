@@ -1,6 +1,7 @@
 # binary协议
-  分析thrift二进制传输协议格式，普通socket传输
-  完整的示例见gostudy中的thrifttest/binary[https://github.com/chengnl/gostudy/tree/master/thrifttest/binary](https://github.com/chengnl/gostudy/tree/master/thrifttest/binary)
+  分析thrift二进制传输协议格式，普通socket传输  
+  完整的示例见gostudy中的thrifttest/binary
+  [https://github.com/chengnl/gostudy/tree/master/thrifttest/binary](https://github.com/chengnl/gostudy/tree/master/thrifttest/binary)
 # 协议分析
 ## 方法调用
 方法调用都分为三部分写数据：消息头，参数内容，消息结尾  
