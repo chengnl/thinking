@@ -1,6 +1,6 @@
 # binary协议
   分析thrift二进制传输协议格式，普通socket传输  
-  完整的示例见gostudy中的thrifttest/binary
+  完整的示例见gostudy中的thrifttest/binary  
   [https://github.com/chengnl/gostudy/tree/master/thrifttest/binary](https://github.com/chengnl/gostudy/tree/master/thrifttest/binary)
 # 协议分析
 ## 方法调用
