@@ -27,7 +27,16 @@ WriteMessageBegin(t.serviceName+MULTIPLEXED_SEPARATOR+name, typeId, seqid)
 
 multiplexed协议的Processor将业务的Processor进行了封装
 
-服务启动时将业务的Processor都注册进multiplexed协议的Processor，然后传入server，在server调用Processor的时候，实际调动的是multiplexed协议的Processor
+服务启动时将业务的Processor都注册进multiplexed协议的Processor，然后传入server，调用逻辑：
+
+```
+-----------------------------------------------------------------------------------
+|TServer >> TMultiplexedProcessor >> 获取serviceName >> service的Processor >>业务处理|
+-----------------------------------------------------------------------------------
+
+```
+
+在server调用Processor的时候，实际调动的是multiplexed协议的Processor
 
 这个时候Processor处理的时候先调用服务协议读取消息头，得到方法名，然后将方法名根据“serviceName:方法名”格式解析，得到对应的服务名和方法名
 
