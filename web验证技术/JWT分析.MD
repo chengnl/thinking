@@ -23,8 +23,7 @@ http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/
 
 ###原有单点登录设计
 
-![原单点登录][1]
-[1]: https://github.com/chengnl/thinking/tree/master/images-folder/sso.png "原单点登录交互"
+![原单点登录](https://github.com/chengnl/thinking/tree/master/images-folder/sso.png)
 
 原有的单点登录ticket生成思路：信息拼接后，对称加密算法加密得出ticket
 
