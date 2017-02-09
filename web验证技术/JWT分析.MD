@@ -3,8 +3,8 @@
 JWT是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范，具体协议见：
 [RFC 7519](https://tools.ietf.org/html/rfc7519)
 
-比较好的技术博文：
-http://blog.leapoahead.com/2015/09/06/understanding-jwt/
+比较好的技术博文：   
+http://blog.leapoahead.com/2015/09/06/understanding-jwt/    
 http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/
 
 ##安全性思考
