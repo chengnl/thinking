@@ -24,7 +24,7 @@ http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/
 ###原有单点登录设计
 
 ![原单点登录][1]
-[1]: https://github.com/chengnl/thinking/images-folder/sso.png "原单点登录交互"
+[1]: https://github.com/chengnl/thinking/tree/master/images-folder/sso.png "原单点登录交互"
 
 原有的单点登录ticket生成思路：信息拼接后，对称加密算法加密得出ticket
 
@@ -39,7 +39,7 @@ http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/
 ###基于JWT改造后设计  
 
 ![jwt单点登录][2]
-[2]: https://github.com/chengnl/thinking/images-folder/jwt.png "jwt单点登录"
+[2]: https://github.com/chengnl/thinking/tree/master/images-folder/jwt.png "jwt单点登录"
 
 验证ticket逻辑：  
 创建ticket通过sso的私钥签名，业务系统本地根据公钥验证jwt的有效性，解决两个问题票的存在性、票的有效性，sso不用存储ticket信息
