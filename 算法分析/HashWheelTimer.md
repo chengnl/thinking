@@ -378,7 +378,11 @@ HashedWheelTimeout链表结构
 
 
 netty中的HashedWheelTimer设计比较好的位置，值得学习：
+
 1、状态字段使用原子变量方式修改 AtomicIntegerFieldUpdater
+
 2、worker线程的中断处理 join Interrupted
+
 3、tick休眠处理 循环休眠周期计算
+
 4、任务队列处理机制 timeout添加，放入桶执行
