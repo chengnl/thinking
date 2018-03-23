@@ -14,6 +14,27 @@ JarsLink (原名Titan) 是一个基于JAVA的模块化开发框架，它提供�
    - 返回的对象最好通用，这样调用方可以统一规范解析
    
 
+## 深入理解
+
+### moduleload 模块加载
+
+- ImmutableList
+
+```
+   moduleConfig.setModuleUrl(ImmutableList.of(demoModule));
+```
+ImmutableList  不可变list，防止修改
+
+- classpath
+
+```
+  public static String SPRING_XML_PATTERN  = "classpath*:META-INF/spring/*.xml";
+```
+load path：  
+classpath和classpath*区别： 
+classpath：只会到你的class路径中查找找文件。
+classpath*：不仅包含class路径，还包括jar文件中（class路径）进行查找。
+
 
 
 ##jarslink 地址  
