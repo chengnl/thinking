@@ -14,16 +14,31 @@ JarsLink (原名Titan) 是一个基于JAVA的模块化开发框架，它提供�
    - 返回的对象最好通用，这样调用方可以统一规范解析
    
 
-## 深入理解
+## 代码理解
+   ModuleLoaderImpl 
+   1. 获取模块加载器：扩展URLClassLoader，作用过滤一些排除的包，需要加载器加载的包
+   2. 构建ModuleApplicationContext，扩展：ClassPathXmlApplicationContext 支持增加模块属性，使用当前线程切换ClassLoader解决双亲委派的问题。
+   3. moduleApplicationContext.refresh()实现模块bean加载
+   4. 返回module：SpringModule对象，该对象提供模块的实现Action类提取，以及doaction的execute执行处理，destroy处理；不太理解doaction使用module的类加载器，获取action后直接execute不用？？？
 
-### moduleload 模块加载
 
-- ImmutableList
+   ModuleManagerImpl
+   1. 模块的管理：模块的查找、注册、删除、销毁处理。
 
-```
-   moduleConfig.setModuleUrl(ImmutableList.of(demoModule));
-```
-ImmutableList  不可变list，防止修改
+   ModuleServiceImpl
+   1. 提供module加载和module管理操作。
+
+   AbstractModuleRefreshScheduler
+   1. 实现模块刷新处理，外部加载或者更新的与ModuleManager内部管理比对，新增、版本不同的更新、多余删除处理
+  
+
+
+### 代码比较优雅
+- 使用大量的google类库方便操作
+  1. 不可变集合：ImmutableList，集合比对：Maps.difference，集合过滤：Collections2.filter，集合转换：Maps.uniqueIndex、Maps.transformValues等等
+- 继承ClassPathXmlApplicationContext实现自己的Properties加载；继承URLClassLoader实现自己类过滤
+- 使用spring ApplicationContext加载，或者bean类操作 
+- AbstractModuleRefreshScheduler implements InitializingBean 实现加载后动作。
 
 - classpath
 
