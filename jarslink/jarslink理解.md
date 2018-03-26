@@ -50,6 +50,13 @@ classpath和classpath*区别：
 classpath：只会到你的class路径中查找找文件。
 classpath*：不仅包含class路径，还包括jar文件中（class路径）进行查找。
 
+### 实际运用
+需要将action的请求和返回结果，使用通用对象处理，因为在执行时使用了两个classloader，一个是当前线程的，一个是module的，确保请求参数和返回参数对象类型在父classloader（当前线程）中才能在后续使用。
+
+如果仅仅在module中定义参数和返回结果类型，实际是无法使用的。需要使用父类的对象，这样action的execute才能顺利执行
+
+
+
 
 
 ##jarslink 地址  
